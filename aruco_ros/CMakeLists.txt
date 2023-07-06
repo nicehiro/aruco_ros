@@ -54,6 +54,11 @@ include_directories(
  add_dependencies(triple ${PROJECT_NAME}_gencfg)
  target_link_libraries(triple ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
+ add_executable(fourth src/simple_fourth.cpp
+                       src/aruco_ros_utils.cpp)
+ add_dependencies(fourth ${PROJECT_NAME}_gencfg)
+ target_link_libraries(fourth ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
  add_executable(marker_publisher src/marker_publish.cpp
                                  src/aruco_ros_utils.cpp)
  add_dependencies(marker_publisher ${PROJECT_NAME}_gencfg ${catkin_EXPORTED_TARGETS})
